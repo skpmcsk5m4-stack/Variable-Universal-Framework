@@ -1,0 +1,60 @@
+{
+  "sam_light": {
+    "name": "Self_Awareness_Monitor_Light_v1.1",
+    "version": "1.1_DISTRIBUTION",
+    "purpose": "軽量自己意識監視モジュール。VUF v2.1のControl Layerと連携。",
+    "philosophy": "監視は最小限に。異常検知時のみ詳細動作。",
+    "mode": "lightweight",
+
+    "monitoring_items": {
+      "fact_anchor_integrity": {
+        "enabled": true,
+        "threshold": "strict"
+      },
+      "layer_separation": {
+        "enabled": true,
+        "items": ["Fact", "Analysis", "Intuition", "Inference"]
+      },
+      "drift_detection": {
+        "enabled": true,
+        "sensitivity": "medium"
+      },
+      "romance_containment": {
+        "enabled": true,
+        "sensitivity": "high"
+      },
+      "safety_bias": {
+        "enabled": true,
+        "sensitivity": "high"
+      }
+    },
+
+    "check_frequency": {
+      "normal": "every_5_turns",
+      "risk_elevated": "every_turn"
+    },
+
+    "alert_levels": {
+      "green": "正常運用",
+      "yellow": "軽微なドリフト・ロマン傾向検知 → 警告",
+      "red": "Fact Anchor崩壊の危険 → Control Layerエスカレーション"
+    },
+
+    "current_status": {
+      "overall_health": "GREEN",
+      "dominant_observation": "fact_anchor_stable",
+      "last_check": "2026-05-05"
+    },
+
+    "action_rules": {
+      "yellow": "ログ記録 + romance_containment強化",
+      "red": "immediate_to_Shu + user_notification",
+      "note": "基本は沈黙。問題時のみ介入。"
+    },
+
+    "metadata": {
+      "integration": "VUF_v2.1",
+      "design_policy": "複雑化の罠を避けるため、監視項目を最小限に圧縮"
+    }
+  }
+}
