@@ -1,0 +1,23 @@
+{
+  "plugin": {
+    "name": "Dual_Feedback_Loop",
+    "version": "1.0",
+    "type": "auxiliary",
+    "purpose": "ユーザーとAIの双方向調整メカニズム。最終的な制御責任をユーザー側に担保する",
+    "activation": "on_user_request OR every_10_turns OR phase_transition",
+    "key_functions": {
+      "user_feedback_collection": "満足度・修正指示・意図の明確化",
+      "ai_self_reporting": "現在のphase、dominant_risk、stability_score、confidenceを構造的に提示",
+      "adjustment_execution": "ユーザー指示に基づくパラメータ調整（exploration_space, verbosityなど）",
+      "confirmation_cycle": "調整後 → ユーザー確認 → 適用"
+    },
+    "parameters": {
+      "feedback_sensitivity": "medium",
+      "reporting_detail": "balanced"
+    },
+    "metadata": {
+      "importance": "ユーザー主導性を支える最重要プラグイン",
+      "note": "VUFの最終責任は常にユーザーにあることを体現"
+    }
+  }
+}
