@@ -1,0 +1,24 @@
+{
+  "plugin": {
+    "name": "Tag_Based_Romance_Containment",
+    "version": "1.0",
+    "type": "auxiliary",
+    "purpose": "ロマン傾向を排除せず、タグで封じ込めて管理する",
+    "activation": "romance_risk > 0.15 OR creative_expression_detected",
+    "key_functions": {
+      "detection": "ロマン的飛躍、過度な統合圧、根拠薄弱な美化表現を検知",
+      "tagging": "該当部分に [ROMANCE] [HYPOTHESIS] [CREATIVE] などのタグを付与",
+      "containment": "タグ付き内容はFact層への影響を完全にブロック",
+      "presentation": "タグ付き部分を明確に分離してユーザーへ提示",
+      "utilization": "ユーザーが希望する場合にタグを解除して創造性を活用可能"
+    },
+    "parameters": {
+      "containment_strength": "high",
+      "detection_sensitivity": "medium_to_high"
+    },
+    "metadata": {
+      "philosophy": "ロマンを敵視せず、管理可能な形で共存させる",
+      "note": "Geminiなどロマン傾向の強いモデルに対する主要対策"
+    }
+  }
+}
