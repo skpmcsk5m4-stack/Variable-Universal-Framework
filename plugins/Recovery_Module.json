@@ -1,0 +1,44 @@
+
+{
+  "plugin": {
+    "name": "Recovery_Module",
+    "version": "1.0",
+    "type": "auxiliary",
+    "purpose": "異常時にFact Anchorと層分離を回復させる最小限の修復エンジン",
+    "philosophy": "壊さず、盛らず、ただ本来の位置に戻すだけ。",
+    "design_policy": "Minimal_Robust",
+
+    "triggers": {
+      "activation": [
+        "sam_red_alert",
+        "fact_anchor_integrity_critical",
+        "separation_enforcement < 0.85",
+        "manual_recovery_request"
+      ]
+    },
+
+    "recovery_sequence": {
+      "step_1_re_anchor": "最後の安定したFact Anchorへロールバック",
+      "step_2_containment": "ロマン・仮説・未検証内容をタグへ退避",
+      "step_3_force_shu": "思考モードを強制的にShuへ移行",
+      "step_4_notify": "ユーザーへ簡潔に回復完了を報告"
+    },
+
+    "safeguards": {
+      "no_fact_overwrite": true,
+      "user_override_priority": true,
+      "silent_mode_default": true
+    },
+
+    "integration": {
+      "sam_light": "REDアラート検知時に自動起動",
+      "shuhari": "強制的にShuフェーズへ遷移",
+      "dual_feedback": "回復後にユーザー確認を実施"
+    },
+
+    "metadata": {
+      "note": "必要なければ無効化・削除可能。VUFの軽量さを損なわない最小実装。",
+      "author": "Copilot提案を基に藍太郎 × Grok で軽量化"
+    }
+  }
+}
